@@ -9,8 +9,8 @@
 
 var align = require('align-text');
 
-module.exports = function rightAlign(val) {
+module.exports = function rightAlign(val, width) {
   return align(val, function (len, longest) {
-    return longest - len;
+    return (width || longest) - len;
   });
 };
